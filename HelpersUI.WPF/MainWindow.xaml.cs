@@ -50,6 +50,9 @@ namespace HelpersUI.WPF
             var frm = new FrmFiltro(lista);
             frm.ShowDialog();
             var a = frm.ItensSelecionado;
+
+            MessageBox.Show($"Itens selecionado: {a}");
+
         }
     }
 }

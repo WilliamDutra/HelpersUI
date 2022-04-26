@@ -15,14 +15,17 @@ namespace HelpersUI.WPF.VMS
         public Command FecharCommand { get; set; }
 
         public Command SelecionarTodosCommand { get; set; }
+
+        public Command PesquisarCommand { get; set; }
         #endregion
 
-        public FrmFiltroViewModel(ObservableCollection<ListaFiltro> Source)
+        public FrmFiltroViewModel(ObservableCollection<ListaFiltro> source)
         {
-            ListBoxItemSource = Source;
-            TotalItens = ListBoxItemSource.Count();
+            Source = source;
+            CarregarLista();
             FecharCommand = new Command((win) => Fechar(win));
             SelecionarTodosCommand = new Command(SelecionarTodos);
+            PesquisarCommand = new Command(() => Pesquisar(Filtro));
         }
 
         public FrmFiltroViewModel()
@@ -31,6 +34,14 @@ namespace HelpersUI.WPF.VMS
         }
 
         #region [ Propriedades ]
+        private ObservableCollection<ListaFiltro> _Source;
+
+        public ObservableCollection<ListaFiltro> Source
+        {
+            get { return _Source; }
+            set { SetProperty(ref _Source, value); }
+        }
+
         private ObservableCollection<ListaFiltro> _ListBoxItemSource;
 
         public ObservableCollection<ListaFiltro> ListBoxItemSource
@@ -53,6 +64,14 @@ namespace HelpersUI.WPF.VMS
         {
             get { return _TotalItens; }
             set { SetProperty(ref _TotalItens, value); }
+        }
+
+        private string _Filtro;
+
+        public string Filtro 
+        { 
+            get { return _Filtro; }
+            set { SetProperty(ref _Filtro, value); }
         }
         #endregion
 
@@ -97,6 +116,41 @@ namespace HelpersUI.WPF.VMS
             }
 
             ListBoxItemSource = TodosSelecionados;
+        }
+
+        /// <summary>
+        /// Método que faz a pesquisa na listagem do
+        /// filtro
+        /// </summary>
+        /// <param name="Filtro">Nome pesquisado do filtro</param>
+        private void Pesquisar(string Filtro)
+        {
+            ObservableCollection<ListaFiltro> filtroEncontrado = new ObservableCollection<ListaFiltro>();
+
+            foreach (var item in Source)
+            {
+                if (item.Nome.Contains(Filtro))
+                {
+                    filtroEncontrado.Add(new ListaFiltro
+                    {
+                        Nome = item.Nome,
+                        Selecionado = item.Selecionado
+                    });
+                }
+            }
+
+            // Verifica se o a pesquisa do fitro não está vazio
+            if (!string.IsNullOrEmpty(Filtro))
+                ListBoxItemSource = filtroEncontrado;
+            else
+                ListBoxItemSource = Source; // volta com a lista original 
+
+        }
+
+        private void CarregarLista()
+        {
+            ListBoxItemSource = Source;
+            TotalItens = ListBoxItemSource.Count();
         }
 
     }
