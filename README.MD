@@ -9,7 +9,7 @@ Biblioteca com componentes visuais para WPF ( .NET Core 3.1 )
 
 ## Screenshots
 
-![filtro](Docs/Imagnes/Filtro.PNG)
+![filtro](./Docs/Imagnes/Filtro.PNG)
 
 
 ## License
