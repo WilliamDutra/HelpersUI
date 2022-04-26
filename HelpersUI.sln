@@ -1,0 +1,30 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31624.102
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "01 - WPF", "01 - WPF", "{91EB36DF-6254-401D-A9C4-D9E048F60ED6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HelpersUI.WPF", "HelpersUI.WPF\HelpersUI.WPF.csproj", "{6F1F5F16-F9DF-4486-B693-1CC36F6E8338}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{6F1F5F16-F9DF-4486-B693-1CC36F6E8338}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6F1F5F16-F9DF-4486-B693-1CC36F6E8338}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6F1F5F16-F9DF-4486-B693-1CC36F6E8338}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6F1F5F16-F9DF-4486-B693-1CC36F6E8338}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{6F1F5F16-F9DF-4486-B693-1CC36F6E8338} = {91EB36DF-6254-401D-A9C4-D9E048F60ED6}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {7E5F43DA-486D-4A98-8B15-994D798D81A5}
+	EndGlobalSection
+EndGlobal
