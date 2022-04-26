@@ -13,12 +13,16 @@ namespace HelpersUI.WPF.VMS
     {
         #region [ Eventos ]
         public Command FecharCommand { get; set; }
+
+        public Command SelecionarTodosCommand { get; set; }
         #endregion
 
         public FrmFiltroViewModel(ObservableCollection<ListaFiltro> Source)
         {
             ListBoxItemSource = Source;
+            TotalItens = ListBoxItemSource.Count();
             FecharCommand = new Command((win) => Fechar(win));
+            SelecionarTodosCommand = new Command(SelecionarTodos);
         }
 
         public FrmFiltroViewModel()
@@ -43,9 +47,19 @@ namespace HelpersUI.WPF.VMS
             set { SetProperty(ref _ItensSelecionados, value); }
         }
 
+        private int _TotalItens;
+
+        public int TotalItens 
+        {
+            get { return _TotalItens; }
+            set { SetProperty(ref _TotalItens, value); }
+        }
         #endregion
 
-
+        /// <summary>
+        /// Método que fecha a janela de filtro
+        /// </summary>
+        /// <param name="win"></param>
         private void Fechar(object win)
         {
             var selecionados = ListBoxItemSource.Where(x => x.Selecionado);
@@ -63,13 +77,28 @@ namespace HelpersUI.WPF.VMS
             
         }
 
+        /// <summary>
+        /// Método que seleciona todas as opções dentro do 
+        /// ListBox
+        /// </summary>
+        private void SelecionarTodos()
+        {
+            ObservableCollection<ListaFiltro> TodosSelecionados = new ObservableCollection<ListaFiltro>();
+
+            bool IsTodosSelecionados = ListBoxItemSource.All(x => x.Selecionado == true);
+
+            foreach (var item in ListBoxItemSource)
+            {
+                TodosSelecionados.Add(new ListaFiltro
+                {
+                    Selecionado = !IsTodosSelecionados ?  true : false,
+                    Nome = item.Nome
+                });
+            }
+
+            ListBoxItemSource = TodosSelecionados;
+        }
+
     }
 
-    public class ListBoxItemSource
-    {
-        public string Nome { get; set; }
-
-        public bool IsChecked { get; set; } = false;
-
-    }
 }

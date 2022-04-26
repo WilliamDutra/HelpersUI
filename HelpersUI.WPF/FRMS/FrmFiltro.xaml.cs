@@ -36,9 +36,11 @@ namespace HelpersUI.WPF.FRMS
         {
             InitializeComponent();
             vm = new FrmFiltroViewModel(Source);
+            vm.Titulo = "[Filtro de Times]";
             DataContext = vm;
         }
 
+        // Evento de fechamento da janela
         private void OnClosed(object sender, EventArgs e)
         {
             ItensSelecionado = vm.ItensSelecionados;
