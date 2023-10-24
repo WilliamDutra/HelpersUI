@@ -7,6 +7,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "WPF", "WPF", "{902F1656-786
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HelpersUI.WPF", "Src\HelpersUI.WPF\HelpersUI.WPF.csproj", "{997C237C-34D3-4382-8D7F-862EA6243E46}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Windows Forms", "Windows Forms", "{DD047FE3-4600-4257-BFF9-A180E7668475}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HelpersUI.WindowsForms", "Src\HelpersUI.WindowsForms\HelpersUI.WindowsForms.csproj", "{4A57D9D8-EADF-4CE5-B162-C2552B285770}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -17,12 +21,17 @@ Global
 		{997C237C-34D3-4382-8D7F-862EA6243E46}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{997C237C-34D3-4382-8D7F-862EA6243E46}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{997C237C-34D3-4382-8D7F-862EA6243E46}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4A57D9D8-EADF-4CE5-B162-C2552B285770}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4A57D9D8-EADF-4CE5-B162-C2552B285770}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4A57D9D8-EADF-4CE5-B162-C2552B285770}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4A57D9D8-EADF-4CE5-B162-C2552B285770}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{997C237C-34D3-4382-8D7F-862EA6243E46} = {902F1656-7865-4D1C-9840-F6CAF1061F0C}
+		{4A57D9D8-EADF-4CE5-B162-C2552B285770} = {DD047FE3-4600-4257-BFF9-A180E7668475}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {7E5F43DA-486D-4A98-8B15-994D798D81A5}
